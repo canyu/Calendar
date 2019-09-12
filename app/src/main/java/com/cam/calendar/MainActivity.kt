@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() , OnCalendarClickListener {
         val head = ListHead(layoutInflater)
         listHead = head
         rvScheduleList.addHeaderView(head.listHead)
-        Log.d("yucan", " MyCalendarListViewActivity(onCreate):  ")
         val strs = arrayOfNulls<String>(100)
         for (i in strs.indices) {
             strs[i] = String.format("第%d行", i)
