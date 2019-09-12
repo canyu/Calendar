@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignWithParentIfMissing="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
+        android:background="@color/calendar_bg_color">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/calendar_bg_color"
+            android:text="Title"
+            android:textColor="@color/black"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/tv_back_to_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/calendar_bg_color"
+            android:text="@string/today"
+            android:textColor="@color/today_color"
+            android:textSize="15sp"/>
+
+    </RelativeLayout>
+    <com.cam.lib.calendar.view.WeekBarView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/week_bar_height"
+        android:background="@color/calendar_bg_color"
+        app:week_text_color="#333333"
+        app:weekend_text_color="#888888"
+        app:week_text_size="@integer/calendar_text_size"/>
+
+    <com.cam.lib.calendar.view.CalendarLayout
+        android:id="@+id/slSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:default_view="week">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_calendar"/>
+
+            <RelativeLayout
+                android:id="@+id/rlScheduleList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorBackground">
+
+                <ListView
+                    android:id="@+id/rvScheduleList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    android:paddingTop="0.5dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/rlNoTask"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorBackground"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="50dp"
+                        android:src="@mipmap/bg_no_task"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </com.cam.lib.calendar.view.CalendarLayout>
+
+</LinearLayout>

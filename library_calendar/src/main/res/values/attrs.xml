@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="WeekBarView">
+        <attr name="week_text_color" format="color" />
+        <attr name="week_text_size" format="integer" />
+        <attr name="weekend_text_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="RangeBaseView">
+        <attr name="selected_text_color" format="color" />
+        <attr name="selected_circle_color" format="color" />
+        <attr name="selected_circle_today_color" format="color" />
+        <attr name="normal_text_color" format="color" />
+        <attr name="today_text_color" format="color" />
+        <attr name="lunar_text_color" format="color" />
+        <attr name="hint_circle_color" format="color" />
+        <attr name="holiday_color" format="color" />
+        <attr name="last_or_next_range_text_color" format="color" />
+        <attr name="day_text_size" format="integer" />
+        <attr name="day_lunar_text_size" format="integer" />
+        <attr name="show_task_hint" format="boolean" />
+        <attr name="show_lunar" format="boolean" />
+        <attr name="show_holiday_hint" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CalendarLayout">
+        <attr name="default_view">
+            <enum name="month" value="0" />
+            <enum name="week" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="DragDisplayBoard">
+        <attr name="board_select_circle_color" format="color" />
+        <attr name="board_select_border_color" format="color" />
+    </declare-styleable>
+
+</resources>

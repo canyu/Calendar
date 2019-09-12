@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignWithParentIfMissing="true"
+    android:orientation="vertical">
+
+    <com.cam.lib.calendar.view.WeekBarView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/week_bar_height"
+        android:background="@color/calendar_bg_color"
+        app:week_text_color="#333333"
+        app:weekend_text_color="#888888"
+        app:week_text_size="@integer/calendar_text_size"/>
+
+    <com.cam.lib.calendar.view.CalendarLayout
+        android:id="@+id/slSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:default_view="week">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rlMonthCalendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.cam.lib.calendar.pager.MonthViewPager
+                        android:id="@+id/mcvCalendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/month_calendar_height"
+                        android:background="@color/calendar_bg_color"
+                        android:overScrollMode="never"
+                        app:day_text_size="@integer/calendar_text_size"
+                        app:holiday_color="@color/holiday_text_color"
+                        app:selected_circle_color="@color/select_circle_color"
+                        app:selected_circle_today_color="@color/select_circle_color"
+                        app:today_text_color="@color/today_color"/>
+                </RelativeLayout>
+
+                <com.cam.lib.calendar.pager.WeekViewPager
+                    android:id="@+id/wcvCalendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/week_calendar_height"
+                    android:background="@color/calendar_bg_color"
+                    android:overScrollMode="never"
+                    android:visibility="gone"
+                    app:holiday_color="@color/holiday_text_color"
+                    app:selected_circle_color="@color/select_circle_color"
+                    app:selected_circle_today_color="@color/select_circle_color"
+                    app:today_text_color="@color/today_color"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rlScheduleList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorBackground">
+
+                <ListView
+                    android:id="@+id/rvScheduleList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    android:paddingTop="0.5dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/rlNoTask"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorBackground"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="50dp"
+                        android:src="@mipmap/bg_no_task"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </com.cam.lib.calendar.view.CalendarLayout>
+
+</LinearLayout>

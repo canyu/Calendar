@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rlMonthCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.cam.lib.calendar.pager.MonthViewPager
+            android:id="@+id/mcvCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/month_calendar_height"
+            android:background="@color/calendar_bg_color"
+            android:overScrollMode="never"
+            app:day_text_size="@integer/calendar_text_size"
+            app:holiday_color="@color/holiday_text_color"
+            app:selected_circle_color="@color/select_circle_color"
+            app:selected_circle_today_color="@color/select_circle_color"
+            app:today_text_color="@color/today_color"/>
+    </RelativeLayout>
+
+    <com.cam.lib.calendar.pager.WeekViewPager
+        android:id="@+id/wcvCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/week_calendar_height"
+        android:background="@color/calendar_bg_color"
+        android:overScrollMode="never"
+        android:visibility="gone"
+        app:holiday_color="@color/holiday_text_color"
+        app:selected_circle_color="@color/select_circle_color"
+        app:selected_circle_today_color="@color/select_circle_color"
+        app:today_text_color="@color/today_color"/>
+
+</RelativeLayout>

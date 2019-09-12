@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyCalendar</string>
+    <string name="today">今天</string>
+    <string name="loading"></string>
+</resources>
